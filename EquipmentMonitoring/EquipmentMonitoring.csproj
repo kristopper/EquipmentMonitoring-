@@ -1,0 +1,1502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E0B73B3-8EE7-4589-B06F-5A470ABF43C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EquipmentMonitoring</RootNamespace>
+    <AssemblyName>EquipmentMonitoring</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDailyActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDailyActivity.Designer.cs">
+      <DependentUpon>AddDailyActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEquipmentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEquipmentType.Designer.cs">
+      <DependentUpon>AddEquipmentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExpenses.Designer.cs">
+      <DependentUpon>AddExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFuelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFuelType.Designer.cs">
+      <DependentUpon>AddFuelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMonitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMonitoring.Designer.cs">
+      <DependentUpon>AddMonitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTankList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTankList.Designer.cs">
+      <DependentUpon>AddTankList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUnitBattery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUnitBattery.Designer.cs">
+      <DependentUpon>AddUnitBattery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUnitTire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUnitTire.Designer.cs">
+      <DependentUpon>AddUnitTire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\addunits\AddEquipmentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\addunits\AddEquipmentControl.Designer.cs">
+      <DependentUpon>AddEquipmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\addunits\EditFuelUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\addunits\EditFuelUnit.Designer.cs">
+      <DependentUpon>EditFuelUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\addunits\EditUnitInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\addunits\EditUnitInfo.Designer.cs">
+      <DependentUpon>EditUnitInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\addunits\EditUnitInfo_orig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\addunits\EditUnitInfo_orig.Designer.cs">
+      <DependentUpon>EditUnitInfo_orig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\addunits\ExpensesViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\addunits\ExpensesViewControl.Designer.cs">
+      <DependentUpon>ExpensesViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\addunits\FuelViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\addunits\FuelViewControl.Designer.cs">
+      <DependentUpon>FuelViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\addunits\UnitListDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\addunits\UnitListDetail.Designer.cs">
+      <DependentUpon>UnitListDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllMaintenanceExpenses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllMaintenanceExpenses.Designer.cs">
+      <DependentUpon>AllMaintenanceExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupControl.Designer.cs">
+      <DependentUpon>AllSetupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\AddCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\AddCategoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\AddCategoryControl.Designer.cs">
+      <DependentUpon>AddCategoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\category\CategoryAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\category\CategoryAdd.Designer.cs">
+      <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\category\SubCategoryAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\category\SubCategoryAdd.Designer.cs">
+      <DependentUpon>SubCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Employee\AddemployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Employee\AddemployeeControl.Designer.cs">
+      <DependentUpon>AddemployeeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Employee\AddSupervisorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Employee\AddSupervisorControl.Designer.cs">
+      <DependentUpon>AddSupervisorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Employee\EmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Employee\EmployeeControl.Designer.cs">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\FuelType\AddFuelTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\FuelType\AddFuelTypeControl.Designer.cs">
+      <DependentUpon>AddFuelTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\FuelType\FuelTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\FuelType\FuelTypeControl.Designer.cs">
+      <DependentUpon>FuelTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Position\PositionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Position\PositionControl.Designer.cs">
+      <DependentUpon>PositionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\ProjectSite\ProjectSiteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\ProjectSite\ProjectSiteControl.Designer.cs">
+      <DependentUpon>ProjectSiteControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\SubcategoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\SubcategoryControl.Designer.cs">
+      <DependentUpon>SubcategoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\TankType\AddTankTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\TankType\AddTankTypeControl.Designer.cs">
+      <DependentUpon>AddTankTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\TankType\EditTankTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\TankType\EditTankTypeControl.Designer.cs">
+      <DependentUpon>EditTankTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\TankType\TankTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\TankType\TankTypeControl.Designer.cs">
+      <DependentUpon>TankTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\trucktypeform\EditTruckTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\trucktypeform\EditTruckTypeControl.Designer.cs">
+      <DependentUpon>EditTruckTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Trucktype\AddtrucktypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Trucktype\AddtrucktypeControl.Designer.cs">
+      <DependentUpon>AddtrucktypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Trucktype\EditFuelType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Trucktype\EditFuelType.Designer.cs">
+      <DependentUpon>EditFuelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Trucktype\TruckTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\AllSetupform\Trucktype\TruckTypeControl.Designer.cs">
+      <DependentUpon>TruckTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\DashBoardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\DashBoardControl.Designer.cs">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\DashBoardMenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\DashBoardMenuControl.Designer.cs">
+      <DependentUpon>DashBoardMenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddBorrowItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddBorrowItem.Designer.cs">
+      <DependentUpon>AddBorrowItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddExpensesME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddExpensesME.Designer.cs">
+      <DependentUpon>AddExpensesME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddItemExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddItemExpenses.Designer.cs">
+      <DependentUpon>AddItemExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddUnitExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\AddUnitExpenses.Designer.cs">
+      <DependentUpon>AddUnitExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\ExpensesRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\ExpensesRequest.Designer.cs">
+      <DependentUpon>ExpensesRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\FinalMechanic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\FinalMechanic.Designer.cs">
+      <DependentUpon>FinalMechanic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\MaintenanceAndRepair.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\MaintenanceAndRepair.Designer.cs">
+      <DependentUpon>MaintenanceAndRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\RepairMeRemarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\RepairMeRemarks.Designer.cs">
+      <DependentUpon>RepairMeRemarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\expenses\UpdateItemExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\expenses\UpdateItemExpenses.Designer.cs">
+      <DependentUpon>UpdateItemExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelFormControl.Designer.cs">
+      <DependentUpon>FuelFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\AddDailyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\AddDailyControl.Designer.cs">
+      <DependentUpon>AddDailyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\AllLog\FuelMainAllLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\AllLog\FuelMainAllLogControl.Designer.cs">
+      <DependentUpon>FuelMainAllLogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\AllLog\FuelTankerAllLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\AllLog\FuelTankerAllLogControl.Designer.cs">
+      <DependentUpon>FuelTankerAllLogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\FuelMainLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\FuelMainLogControl.Designer.cs">
+      <DependentUpon>FuelMainLogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\FuelPriceList\UpdateFuelPriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\FuelPriceList\UpdateFuelPriceForm.Designer.cs">
+      <DependentUpon>UpdateFuelPriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\FuelTankerLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\FuelTankerLogControl.Designer.cs">
+      <DependentUpon>FuelTankerLogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\MainRefillControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelForm\MainRefillControl.Designer.cs">
+      <DependentUpon>MainRefillControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\FuelMenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\FuelMenuControl.Designer.cs">
+      <DependentUpon>FuelMenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Fuel\AddDailyMonitoringControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Fuel\AddDailyMonitoringControl.Designer.cs">
+      <DependentUpon>AddDailyMonitoringControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Fuel\FuelLogMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Fuel\FuelLogMainControl.Designer.cs">
+      <DependentUpon>FuelLogMainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Fuel\FuelLogTruckControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Fuel\FuelLogTruckControl.Designer.cs">
+      <DependentUpon>FuelLogTruckControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Fuel\FuelPriceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Fuel\FuelPriceControl.Designer.cs">
+      <DependentUpon>FuelPriceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Fuel\MainFuelLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Fuel\MainFuelLogControl.Designer.cs">
+      <DependentUpon>MainFuelLogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Fuel\RefillMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Fuel\RefillMainControl.Designer.cs">
+      <DependentUpon>RefillMainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\MaintenanceForm\MainHistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\MaintenanceForm\MainHistoryControl.Designer.cs">
+      <DependentUpon>MainHistoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\MaintenanceForm\MaintenanceListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\MaintenanceForm\MaintenanceListControl.Designer.cs">
+      <DependentUpon>MaintenanceListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\ReportsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\ReportsControl.Designer.cs">
+      <DependentUpon>ReportsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\DailyFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\DailyFormControl.Designer.cs">
+      <DependentUpon>DailyFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\Daily\TruckandHeavyDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\Daily\TruckandHeavyDisplay.Designer.cs">
+      <DependentUpon>TruckandHeavyDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\MonthlyFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\MonthlyFormControl.Designer.cs">
+      <DependentUpon>MonthlyFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\FuelMonthlyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\FuelMonthlyControl.Designer.cs">
+      <DependentUpon>FuelMonthlyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\multipleFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\multipleFilterControl.Designer.cs">
+      <DependentUpon>multipleFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\MultiProjectSiteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\MultiProjectSiteControl.Designer.cs">
+      <DependentUpon>MultiProjectSiteControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\ProjectSiteMonthlyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\ProjectSiteMonthlyControl.Designer.cs">
+      <DependentUpon>ProjectSiteMonthlyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\TruckMonthlyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\Montly\TruckMonthlyControl.Designer.cs">
+      <DependentUpon>TruckMonthlyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\OverallReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\OverallReportControl.Designer.cs">
+      <DependentUpon>OverallReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\OverAll\ProjectSiteOverAllControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\OverAll\ProjectSiteOverAllControl.Designer.cs">
+      <DependentUpon>ProjectSiteOverAllControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\OverAll\TruckOverallExpensesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\OverAll\TruckOverallExpensesControl.Designer.cs">
+      <DependentUpon>TruckOverallExpensesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Reports\ProjectSite\ProjectSiteEquipmentM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Reports\ProjectSite\ProjectSiteEquipmentM.Designer.cs">
+      <DependentUpon>ProjectSiteEquipmentM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Unitfrom\unitAllform\UnitListFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Unitfrom\unitAllform\UnitListFormControl.Designer.cs">
+      <DependentUpon>UnitListFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\Unitfrom\UnitMenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\Unitfrom\UnitMenuControl.Designer.cs">
+      <DependentUpon>UnitMenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForm\UnitListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllForm\UnitListControl.Designer.cs">
+      <DependentUpon>UnitListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllMainTankerLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllMainTankerLog.Designer.cs">
+      <DependentUpon>AllMainTankerLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllTankertruckLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllTankertruckLog.Designer.cs">
+      <DependentUpon>AllTankertruckLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryList.Designer.cs">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConstComStr.cs" />
+    <Compile Include="CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverList.Designer.cs">
+      <DependentUpon>DriverList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCategory.Designer.cs">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterNumber.Designer.cs">
+      <DependentUpon>EnterNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpensesDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpensesDetail.Designer.cs">
+      <DependentUpon>ExpensesDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\AllMaintenanceExpensesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\AllMaintenanceExpensesReport.Designer.cs">
+      <DependentUpon>AllMaintenanceExpensesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\RMaintenanceExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\RMaintenanceExpenses.Designer.cs">
+      <DependentUpon>RMaintenanceExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\ProjectSiteDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\ProjectSiteDetail.Designer.cs">
+      <DependentUpon>ProjectSiteDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\ProjectSiteMonthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\ProjectSiteMonthlyReport.Designer.cs">
+      <DependentUpon>ProjectSiteMonthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\ProjectSiteOverAllReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\ProjectSiteOverAllReport.Designer.cs">
+      <DependentUpon>ProjectSiteOverAllReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\RMainTankLogSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\RMainTankLogSheet.Designer.cs">
+      <DependentUpon>RMainTankLogSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\RTankerTruckLogSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\RTankerTruckLogSheet.Designer.cs">
+      <DependentUpon>RTankerTruckLogSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\TruckMonthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\TruckMonthlyReport.Designer.cs">
+      <DependentUpon>TruckMonthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\TruckOverallReportcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\TruckOverallReportcs.Designer.cs">
+      <DependentUpon>TruckOverallReportcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\UnitExpensesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\UnitExpensesReport.Designer.cs">
+      <DependentUpon>UnitExpensesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\UnitFuelReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\UnitFuelReport.Designer.cs">
+      <DependentUpon>UnitFuelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\UnitPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForReportForm\Forms\UnitPrint.Designer.cs">
+      <DependentUpon>UnitPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelLogSheetMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelLogSheetMain.Designer.cs">
+      <DependentUpon>FuelLogSheetMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelLogSheetTruck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelLogSheetTruck.Designer.cs">
+      <DependentUpon>FuelLogSheetTruck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelPriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelPriceList.Designer.cs">
+      <DependentUpon>FuelPriceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Libs\Encryptor.cs" />
+    <Compile Include="Libs\GenericFunctions.cs" />
+    <Compile Include="Libs\RegistryLocator.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainform.Designer.cs">
+      <DependentUpon>mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDataSet10072019.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceDataSet10072019.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDataSet_08132019.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceDataSet_08132019.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceExpenses.Designer.cs">
+      <DependentUpon>MaintenanceExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceHistory.Designer.cs">
+      <DependentUpon>MaintenanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceList.Designer.cs">
+      <DependentUpon>MaintenanceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceRequest.Designer.cs">
+      <DependentUpon>MaintenanceRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\Trucktype.cs" />
+    <Compile Include="MonthlyExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyExpenses.Designer.cs">
+      <DependentUpon>MonthlyExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherDailySheetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherDailySheetForm.Designer.cs">
+      <DependentUpon>OtherDailySheetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingRequest.Designer.cs">
+      <DependentUpon>PendingRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessMaintenance.Designer.cs">
+      <DependentUpon>ProcessMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PumpIncharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PumpIncharge.Designer.cs">
+      <DependentUpon>PumpIncharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RefillEquipment_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RefillEquipment_main.Designer.cs">
+      <DependentUpon>RefillEquipment_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RegisterTruck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RegisterTruck.Designer.cs">
+      <DependentUpon>RegisterTruck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RefillMainTanker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RefillMainTanker.Designer.cs">
+      <DependentUpon>RefillMainTanker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterDriver.Designer.cs">
+      <DependentUpon>RegisterDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterPump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterPump.Designer.cs">
+      <DependentUpon>RegisterPump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistryLocators.cs" />
+    <Compile Include="RenameCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameCategory.Designer.cs">
+      <DependentUpon>RenameCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\MonitoringRepo.cs" />
+    <Compile Include="Repository\MonitoringRepository.cs" />
+    <Compile Include="SelectTank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectTank.Designer.cs">
+      <DependentUpon>SelectTank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="SubCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubCategory.Designer.cs">
+      <DependentUpon>SubCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tanker.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tanker.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TruckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruckForm.Designer.cs">
+      <DependentUpon>TruckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckType2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruckType2.Designer.cs">
+      <DependentUpon>TruckType2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDeleteForm.Designer.cs">
+      <DependentUpon>UpdateDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDriver.Designer.cs">
+      <DependentUpon>UpdateDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateExpenses.Designer.cs">
+      <DependentUpon>UpdateExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePMS.Designer.cs">
+      <DependentUpon>UpdatePMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePump.Designer.cs">
+      <DependentUpon>UpdatePump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserFormControl\InformationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserFormControl\InformationControl.Designer.cs">
+      <DependentUpon>InformationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserFormControl\TruckFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserFormControl\TruckFormControl.Designer.cs">
+      <DependentUpon>TruckFormControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDailyActivity.resx">
+      <DependentUpon>AddDailyActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEquipmentType.resx">
+      <DependentUpon>AddEquipmentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddExpenses.resx">
+      <DependentUpon>AddExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddFuelType.resx">
+      <DependentUpon>AddFuelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMonitoring.resx">
+      <DependentUpon>AddMonitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTankList.resx">
+      <DependentUpon>AddTankList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUnitBattery.resx">
+      <DependentUpon>AddUnitBattery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUnitTire.resx">
+      <DependentUpon>AddUnitTire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\addunits\AddEquipmentControl.resx">
+      <DependentUpon>AddEquipmentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\addunits\EditFuelUnit.resx">
+      <DependentUpon>EditFuelUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\addunits\EditUnitInfo.resx">
+      <DependentUpon>EditUnitInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\addunits\EditUnitInfo_orig.resx">
+      <DependentUpon>EditUnitInfo_orig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\addunits\ExpensesViewControl.resx">
+      <DependentUpon>ExpensesViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\addunits\FuelViewControl.resx">
+      <DependentUpon>FuelViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\addunits\UnitListDetail.resx">
+      <DependentUpon>UnitListDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllMaintenanceExpenses.resx">
+      <DependentUpon>AllMaintenanceExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupControl.resx">
+      <DependentUpon>AllSetupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\AddCategoryControl.resx">
+      <DependentUpon>AddCategoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\category\CategoryAdd.resx">
+      <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\category\SubCategoryAdd.resx">
+      <DependentUpon>SubCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Employee\AddemployeeControl.resx">
+      <DependentUpon>AddemployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Employee\AddSupervisorControl.resx">
+      <DependentUpon>AddSupervisorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Employee\EmployeeControl.resx">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\FuelType\AddFuelTypeControl.resx">
+      <DependentUpon>AddFuelTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\FuelType\FuelTypeControl.resx">
+      <DependentUpon>FuelTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Position\PositionControl.resx">
+      <DependentUpon>PositionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\ProjectSite\ProjectSiteControl.resx">
+      <DependentUpon>ProjectSiteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\SubcategoryControl.resx">
+      <DependentUpon>SubcategoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\TankType\AddTankTypeControl.resx">
+      <DependentUpon>AddTankTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\TankType\EditTankTypeControl.resx">
+      <DependentUpon>EditTankTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\TankType\TankTypeControl.resx">
+      <DependentUpon>TankTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\trucktypeform\EditTruckTypeControl.resx">
+      <DependentUpon>EditTruckTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Trucktype\AddtrucktypeControl.resx">
+      <DependentUpon>AddtrucktypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Trucktype\EditFuelType.resx">
+      <DependentUpon>EditFuelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\AllSetupform\Trucktype\TruckTypeControl.resx">
+      <DependentUpon>TruckTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\DashBoardControl.resx">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\DashBoardMenuControl.resx">
+      <DependentUpon>DashBoardMenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\AddBorrowItem.resx">
+      <DependentUpon>AddBorrowItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\AddExpensesME.resx">
+      <DependentUpon>AddExpensesME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\AddItemExpenses.resx">
+      <DependentUpon>AddItemExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\AddUnitExpenses.resx">
+      <DependentUpon>AddUnitExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\ExpensesRequest.resx">
+      <DependentUpon>ExpensesRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\FinalMechanic.resx">
+      <DependentUpon>FinalMechanic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\MaintenanceAndRepair.resx">
+      <DependentUpon>MaintenanceAndRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\RepairMeRemarks.resx">
+      <DependentUpon>RepairMeRemarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\expenses\UpdateItemExpenses.resx">
+      <DependentUpon>UpdateItemExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelFormControl.resx">
+      <DependentUpon>FuelFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelForm\AddDailyControl.resx">
+      <DependentUpon>AddDailyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelForm\AllLog\FuelMainAllLogControl.resx">
+      <DependentUpon>FuelMainAllLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelForm\AllLog\FuelTankerAllLogControl.resx">
+      <DependentUpon>FuelTankerAllLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelForm\FuelMainLogControl.resx">
+      <DependentUpon>FuelMainLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelForm\FuelPriceList\UpdateFuelPriceForm.resx">
+      <DependentUpon>UpdateFuelPriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelForm\FuelTankerLogControl.resx">
+      <DependentUpon>FuelTankerLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelForm\MainRefillControl.resx">
+      <DependentUpon>MainRefillControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\FuelMenuControl.resx">
+      <DependentUpon>FuelMenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Fuel\AddDailyMonitoringControl.resx">
+      <DependentUpon>AddDailyMonitoringControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Fuel\FuelLogMainControl.resx">
+      <DependentUpon>FuelLogMainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Fuel\FuelLogTruckControl.resx">
+      <DependentUpon>FuelLogTruckControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Fuel\FuelPriceControl.resx">
+      <DependentUpon>FuelPriceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Fuel\MainFuelLogControl.resx">
+      <DependentUpon>MainFuelLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Fuel\RefillMainControl.resx">
+      <DependentUpon>RefillMainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\MaintenanceForm\MainHistoryControl.resx">
+      <DependentUpon>MainHistoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\MaintenanceForm\MaintenanceListControl.resx">
+      <DependentUpon>MaintenanceListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\ReportsControl.resx">
+      <DependentUpon>ReportsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\DailyFormControl.resx">
+      <DependentUpon>DailyFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\Daily\TruckandHeavyDisplay.resx">
+      <DependentUpon>TruckandHeavyDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\MonthlyFormControl.resx">
+      <DependentUpon>MonthlyFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\Montly\FuelMonthlyControl.resx">
+      <DependentUpon>FuelMonthlyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\Montly\multipleFilterControl.resx">
+      <DependentUpon>multipleFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\Montly\MultiProjectSiteControl.resx">
+      <DependentUpon>MultiProjectSiteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\Montly\ProjectSiteMonthlyControl.resx">
+      <DependentUpon>ProjectSiteMonthlyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\Montly\TruckMonthlyControl.resx">
+      <DependentUpon>TruckMonthlyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\OverallReportControl.resx">
+      <DependentUpon>OverallReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\OverAll\ProjectSiteOverAllControl.resx">
+      <DependentUpon>ProjectSiteOverAllControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\OverAll\TruckOverallExpensesControl.resx">
+      <DependentUpon>TruckOverallExpensesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Reports\ProjectSite\ProjectSiteEquipmentM.resx">
+      <DependentUpon>ProjectSiteEquipmentM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Unitfrom\unitAllform\UnitListFormControl.resx">
+      <DependentUpon>UnitListFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\Unitfrom\UnitMenuControl.resx">
+      <DependentUpon>UnitMenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForm\UnitListControl.resx">
+      <DependentUpon>UnitListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllMainTankerLog.resx">
+      <DependentUpon>AllMainTankerLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllTankertruckLog.resx">
+      <DependentUpon>AllTankertruckLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryList.resx">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverList.resx">
+      <DependentUpon>DriverList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCategory.resx">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterNumber.resx">
+      <DependentUpon>EnterNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpensesDetail.resx">
+      <DependentUpon>ExpensesDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\AllMaintenanceExpensesReport.resx">
+      <DependentUpon>AllMaintenanceExpensesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\RMaintenanceExpenses.resx">
+      <DependentUpon>RMaintenanceExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\ProjectSiteDetail.resx">
+      <DependentUpon>ProjectSiteDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\ProjectSiteMonthlyReport.resx">
+      <DependentUpon>ProjectSiteMonthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\ProjectSiteOverAllReport.resx">
+      <DependentUpon>ProjectSiteOverAllReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\RMainTankLogSheet.resx">
+      <DependentUpon>RMainTankLogSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\RTankerTruckLogSheet.resx">
+      <DependentUpon>RTankerTruckLogSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\TruckMonthlyReport.resx">
+      <DependentUpon>TruckMonthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\TruckOverallReportcs.resx">
+      <DependentUpon>TruckOverallReportcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\UnitExpensesReport.resx">
+      <DependentUpon>UnitExpensesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\UnitFuelReport.resx">
+      <DependentUpon>UnitFuelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\Forms\UnitPrint.resx">
+      <DependentUpon>UnitPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForReportForm\RdlcForm\AllMaintenanceReport.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\MainTankLog.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\MaintenanceExpensesPrint.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\ProjectSiteDetail.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\ProjectSiteMonthly.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\ProjectSiteOverall.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\Report1.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\TruckMonthlyReport.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\TruckOverlAllReport.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\UnitDetailPrint.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\TankerTruckLog.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\UnitExpensesDisplay.rdlc" />
+    <EmbeddedResource Include="ForReportForm\RdlcForm\UnitFuelReportDisplay.rdlc" />
+    <EmbeddedResource Include="FuelLogSheetMain.resx">
+      <DependentUpon>FuelLogSheetMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuelLogSheetTruck.resx">
+      <DependentUpon>FuelLogSheetTruck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuelPriceList.resx">
+      <DependentUpon>FuelPriceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainform.resx">
+      <DependentUpon>mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceExpenses.resx">
+      <DependentUpon>MaintenanceExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceHistory.resx">
+      <DependentUpon>MaintenanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceList.resx">
+      <DependentUpon>MaintenanceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceRequest.resx">
+      <DependentUpon>MaintenanceRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyExpenses.resx">
+      <DependentUpon>MonthlyExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherDailySheetForm.resx">
+      <DependentUpon>OtherDailySheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingRequest.resx">
+      <DependentUpon>PendingRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessMaintenance.resx">
+      <DependentUpon>ProcessMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PumpIncharge.resx">
+      <DependentUpon>PumpIncharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefillEquipment_main.resx">
+      <DependentUpon>RefillEquipment_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RegisterTruck.resx">
+      <DependentUpon>RegisterTruck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefillMainTanker.resx">
+      <DependentUpon>RefillMainTanker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterDriver.resx">
+      <DependentUpon>RegisterDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterPump.resx">
+      <DependentUpon>RegisterPump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameCategory.resx">
+      <DependentUpon>RenameCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectTank.resx">
+      <DependentUpon>SelectTank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubCategory.resx">
+      <DependentUpon>SubCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckForm.resx">
+      <DependentUpon>TruckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckType2.resx">
+      <DependentUpon>TruckType2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDeleteForm.resx">
+      <DependentUpon>UpdateDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDriver.resx">
+      <DependentUpon>UpdateDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateExpenses.resx">
+      <DependentUpon>UpdateExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePMS.resx">
+      <DependentUpon>UpdatePMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePump.resx">
+      <DependentUpon>UpdatePump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFormControl\InformationControl.resx">
+      <DependentUpon>InformationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFormControl\TruckFormControl.resx">
+      <DependentUpon>TruckFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="MaintenanceDataSet.xsc">
+      <DependentUpon>MaintenanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaintenanceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MaintenanceDataSet.xss">
+      <DependentUpon>MaintenanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceDataSet10072019.xsc">
+      <DependentUpon>MaintenanceDataSet10072019.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceDataSet10072019.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaintenanceDataSet10072019.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MaintenanceDataSet10072019.xss">
+      <DependentUpon>MaintenanceDataSet10072019.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceDataSet_08132019.xsc">
+      <DependentUpon>MaintenanceDataSet_08132019.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceDataSet_08132019.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaintenanceDataSet_08132019.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MaintenanceDataSet_08132019.xss">
+      <DependentUpon>MaintenanceDataSet_08132019.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\AddCategory.datasource" />
+    <None Include="Properties\DataSources\AddDailyActivity.datasource" />
+    <None Include="Properties\DataSources\AddEquipmentType.datasource" />
+    <None Include="Properties\DataSources\AddFuelType.datasource" />
+    <None Include="Properties\DataSources\AddMonitoring.datasource" />
+    <None Include="Properties\DataSources\AddTankList.datasource" />
+    <None Include="Properties\DataSources\ConstComStr.datasource" />
+    <None Include="Properties\DataSources\EnterNumber.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.Libs.GenericFunctions.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.Libs.RegistryLocator.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.MaintenanceDataSetTableAdapters.m_TankListTableAdapter.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.MaintenanceDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.MaintenanceDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.model.Trucktype.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.Repository.IMonitoringRepo.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.Repository.IMonitoringRepository.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.Repository.MonitoringRepository.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.tankerTableAdapters.m_TankListTableAdapter.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.tankerTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\EquipmentMonitoring.tankerTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\ExpensesDetail.datasource" />
+    <None Include="Properties\DataSources\mainform.datasource" />
+    <None Include="Properties\DataSources\MaintenanceDataSet.datasource" />
+    <None Include="Properties\DataSources\MaintenanceDataSet.m_TankListDataTable.datasource" />
+    <None Include="Properties\DataSources\MaintenanceDataSet.m_TankListRow.datasource" />
+    <None Include="Properties\DataSources\MaintenanceDataSet.m_TankListRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MaintenanceDataSet.m_TankListRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MaintenanceExpenses.datasource" />
+    <None Include="Properties\DataSources\MaintenanceHistory.datasource" />
+    <None Include="Properties\DataSources\MaintenanceList.datasource" />
+    <None Include="Properties\DataSources\MonitoringAdd.datasource" />
+    <None Include="Properties\DataSources\ProcessMaintenance.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\RefillEquipment_main.datasource" />
+    <None Include="Properties\DataSources\RefillMainTank.datasource" />
+    <None Include="Properties\DataSources\SelectTank.datasource" />
+    <None Include="Properties\DataSources\tanker.datasource" />
+    <None Include="Properties\DataSources\tanker.m_TankListDataTable.datasource" />
+    <None Include="Properties\DataSources\tanker.m_TankListRow.datasource" />
+    <None Include="Properties\DataSources\tanker.m_TankListRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\tanker.m_TankListRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TruckForm.datasource" />
+    <None Include="Properties\DataSources\UpdateDeleteForm.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="tanker.xsc">
+      <DependentUpon>tanker.xsd</DependentUpon>
+    </None>
+    <None Include="tanker.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tanker.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tanker.xss">
+      <DependentUpon>tanker.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Q-CON LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Process-Controller.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lorry-side.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_Button_printer-512.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
